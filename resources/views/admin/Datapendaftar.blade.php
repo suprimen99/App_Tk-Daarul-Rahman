@@ -36,7 +36,7 @@
                 </tr>
             </thead>
             <tbody class="table-border-bottom-0">
-                @foreach ($Siswa as $item)
+                @foreach ($siswa as $item)
 
                 <tr>
                     <td>{{ $loop->iteration }}</td>
@@ -81,12 +81,14 @@
                 @endforeach
             </tbody>
         </table>
-        {!!  $Siswa->links() !!}
+        {!! $siswa->links() !!}
         @include('admin.editpendaftar')
     </div>
 </div>
 </div>
 @include('templates.footer')
+@include('sweetalert::alert')
+
 <!-- Modal -->
 <div class="modal fade" id="simpanModal" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog" role="document">

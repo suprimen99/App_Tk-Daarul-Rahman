@@ -59,6 +59,7 @@
 </div>
 </div>
 @include('templates.footer')
+@include('sweetalert::alert')
 
 
 

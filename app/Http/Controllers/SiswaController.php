@@ -8,14 +8,16 @@ use App\Models\Siswa;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Pagination\Paginator;
+use Illuminate\Routing\Controller;
 
 class SiswaController extends Controller
 {
     public function datapendaftar()
-{
-    $Siswa = Siswa::orderBy('created_at', 'desc')->paginate(5);
-    return view('admin.datapendaftar', compact('Siswa'));
-}
+    {
+        $siswa = Siswa::orderBy('created_at', 'desc')->paginate(5);
+        return view('admin.datapendaftar', compact('siswa'));
+    }
 
 
     public function berhasildaftar()
@@ -26,8 +28,8 @@ class SiswaController extends Controller
 
     public function tambahpendaftar()
     {
-    $Siswa = Siswa::all();
-       return view('admin.datapendaftar', compact('Siswa'));
+        $siswa = Siswa::orderBy('created_at', 'desc')->paginate(5);
+        return view('admin.datapendaftar', compact('siswa'));
     }
 
     public function edit($id)
@@ -42,7 +44,7 @@ class SiswaController extends Controller
     $Siswa = $request->validated();
     $updateSiswa = Siswa::findOrFail($id);
     $updateSiswa->update($Siswa);
-    return redirect()->route('admin.tambahpendaftar')->with('status', 'Category Updated Successfully');
+    return redirect()->route('admin.tambahpendaftar')->with('status', 'Siswa Updated Successfully');
 }
 
  public function pendaftar()
@@ -88,7 +90,7 @@ class SiswaController extends Controller
     }
 
     $Siswa->save();
-    return redirect()->route('berhasildaftar')->with('message', 'Siswa Added Successfully');
+    return redirect()->route('berhasildaftar')->with('success', 'Siswa Added Successfully');
  }
 
 public function hapus($id)

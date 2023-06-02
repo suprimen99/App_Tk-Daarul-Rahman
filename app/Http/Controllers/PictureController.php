@@ -31,7 +31,7 @@ class PictureController extends Controller
 
         $Logo->save();
 
-        return redirect()->route('tambahlogo')->with('status', 'Paralax Added Successfully');
+        return redirect()->route('tambahlogo')->with('success', 'Logo Berhasil Ditambahkan');
 
     }
 
@@ -69,7 +69,7 @@ class PictureController extends Controller
 
         $picture->save();
 
-        return redirect()->route('tambahparalax')->with('status', 'Paralax Added Successfully');
+        return redirect()->route('tambahparalax')->with('success', 'Paralax Berhasil ditambahkan');
 
     }
 
@@ -116,7 +116,7 @@ class PictureController extends Controller
 
         $Galery->save();
 
-        return redirect()->route('tambahgalery')->with('status', 'Galery Added Successfully');
+        return redirect()->route('tambahgalery')->with('success', 'Galery berhasil di Hapus');
 
     }
 
