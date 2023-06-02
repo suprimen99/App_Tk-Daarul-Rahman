@@ -45,7 +45,7 @@
                                 <i class="bx bx-dots-vertical-rounded"></i>
                             </button>
                             <div class="dropdown-menu">
-                                <a class="dropdown-item" href="{{ route('hapuslogo', $item->id ) }}">
+                                <a class="dropdown-item" href="{{ route('hapuslogo', $item->id ) }}" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">
                                     <i class="bx bx-trash me-1"></i> Delete
                                 </a>
                             </div>

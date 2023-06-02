@@ -90,7 +90,7 @@ class SiswaController extends Controller
     }
 
     $Siswa->save();
-    return redirect()->route('berhasildaftar')->with('success', 'Siswa Added Successfully');
+    return redirect()->route('berhasildaftar')->with('success', 'Terimakasih Telah Mendaftar');
  }
 
 public function hapus($id)
@@ -109,15 +109,25 @@ public function hapus($id)
             'nama_siswa' => 'required',
             'usia' => 'required',
             'alamat' => 'required',
-            'jeniskelamin' => '',
+            'jeniskelamin' => 'required',
             'notelpon' => 'required',
             'akte' => 'required',
-            'nik' => 'required',
+            'nik' => 'required|unique:siswa.nik',
             'status' => '',
             'kelas' => '',
-            'nama_orangtua' => '',
-            'user_id'=>''
+            'nama_orangtua' => 'required',
+        ], [
+            'nama_siswa.required' => 'Nama siswa harus diisi.',
+            'usia.required' => 'Usia harus diisi.',
+            'alamat.required' => 'Alamat harus diisi.',
+            'jeniskelamin.required' => 'Jenis kelamin harus dipilih.',
+            'notelpon.required' => 'Nomor telepon harus diisi.',
+            'akte.required' => 'Nomor akte harus diisi.',
+            'nik.required' => 'NIK harus diisi.',
+            'nik.unique' => 'NIK sudah terdaftar.',
         ]);
+
+
 
         $Siswa = new Siswa();
         $Siswa->nama_siswa = $request->nama_siswa;

@@ -14,6 +14,10 @@
             <div class="alert alert-success">
                 {{Session('message')}}
             </div>
+            @elseif (Session('error'))
+    <div class="alert alert-danger">
+        {{ Session('error') }}
+    </div>
             @endif
                     </div>
                     <div class="mt-3">
@@ -34,3 +38,4 @@
             </div>
         </div>
 @endsection
+@include('sweetalert::alert')

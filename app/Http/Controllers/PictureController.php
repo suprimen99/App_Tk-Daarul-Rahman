@@ -52,8 +52,8 @@ class PictureController extends Controller
     {
         $validated = $request->validate([
             'foto' => '',
-            'titleparalax' => '',
-            'captionparalax' => '',
+            'titleparalax' => 'required',
+            'captionparalax' => 'required',
         ]);
 
         $picture = new Picture();
@@ -98,9 +98,13 @@ class PictureController extends Controller
     public function simpangalery(Request $request)
     {
         $validated = $request->validate([
-            'foto' => '',
-            'titlegalery' => '',
-            'captiongalery' => '',
+            'foto' => 'required',
+            'titlegalery' => 'required',
+            'captiongalery' => 'required',
+        ], [
+            'foto.required' => 'Foto harus diunggah',
+            'titlegalery.required' => 'Title Galery harus diisi',
+            'captiongalery.required' => 'Caption Galery harus diisi',
         ]);
 
         $Galery = new Galery();

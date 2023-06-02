@@ -60,9 +60,9 @@ class AuthController extends Controller
                 return  redirect('dashboardsiswa');
             }
         }
-                Session::flash('status', 'Failed');
+                Session::flash('error', 'Failed');
                 Session::flash('message', 'Login invalid');
-                return redirect('/login')->with('message', 'Anda Belum Memiliki Akun, Silakan Registrasi!!');
+                return redirect('/login')->with('error', 'Anda Belum Memiliki Akun, Silakan Registrasi!!');
     }
 
 

@@ -44,7 +44,7 @@
                                 <i class="bx bx-dots-vertical-rounded"></i>
                             </button>
                             <div class="dropdown-menu">
-                                <a class="dropdown-item" href="{{ route('hapusgalery', $item->id ) }}">
+                                <a class="dropdown-item" href="{{ route('hapusgalery', $item->id ) }}" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">
                                     <i class="bx bx-trash me-1"></i> Delete
                                 </a>
                             </div>
@@ -99,11 +99,19 @@
                             <div class="mb-3 col-md-6">
                                 <label for="Title Galeri" class="form-label">Title Galery</label>
                                 <textarea name="titlegalery" class="form-control" id="captiongalery"></textarea>
+                                @error('titlegalery')
+                                <div class="text-danger">{{ $message }}</div>
+                                @enderror
                             </div>
+
                             <div class="mb-3 col-md-6">
                                 <label for="Caption Galeri" class="form-label">Caption Galery</label>
                                 <textarea name="captiongalery" class="form-control" id="captiongalery"></textarea>
+                                @error('captiongalery')
+                                <div class="text-danger">{{ $message }}</div>
+                                @enderror
                             </div>
+
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
                                 <button type="submit" class="btn btn-primary">Tambah</button>

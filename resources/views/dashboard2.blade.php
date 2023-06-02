@@ -134,7 +134,7 @@
 
             <div class="row">
                 @foreach ($galeri as $item )
-                <div class=" col-lg-3 col-sm-12 m-4">
+                <div class=" col-lg-3 col-sm-12 m-5">
                     <div class="card" style="width: 18rem;">
                         <img src="{{ asset('storage/' . $item->foto) }}" class="card-img-top " width="400" height="400" alt="...">
                         <div class="card-body text-center">

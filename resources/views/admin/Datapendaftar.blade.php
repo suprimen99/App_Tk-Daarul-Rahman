@@ -113,23 +113,29 @@
                                   aria-label="Upload"
                                 />
                             </div>
+                        </div>
                         <div class="row">
-
                             <div class="mb-3 col-md-6">
                                 <label for="lastName" class="form-label">Nama Siswa</label>
-                                <input class="form-control" type="text" name="nama_siswa" id="nama_siswa" placeholder="Masukkan Nama Siswa" required />
-                                <small class="text-danger mt-2 error-message" id="nama_siswa-errors"></small>
+                                <input class="form-control" type="text" name="nama_siswa" id="nama_siswa" placeholder="Masukkan Nama Siswa"  />
+                                @error('nama_siswa')
+                                <div class="text-danger"><span>{{ $message }}</span></div>
+                                @enderror
                             </div>
 
                             <div class="mb-3 col-md-6">
                                 <label for="email" class="form-label">Usia</label>
-                                <input class="form-control" type="text" id="usia" name="usia" placeholder="Masukkan Usia" required />
-                                <small class="text-danger mt-2 error-message" id="nama_usia-errors"></small>
+                                <input class="form-control" type="text" id="usia" name="usia" placeholder="Masukkan Usia"  />
+                                @error('usia')
+                                <div class="text-danger"><span>{{ $message }}</span></div>
+                                @enderror
                             </div>
                             <div class="mb-3 col-md-6">
                                 <label for="orangtua" class="form-label">Nama Orang Tua</label>
-                                <input class="form-control" type="text" id="nama_orangtua" name="nama_orangtua" placeholder="Masukkan Nama Orangtua" required />
-                                <small class="text-danger mt-2 error-message" id="nama_orangtua-errors"></small>
+                                <input class="form-control" type="text" id="nama_orangtua" name="nama_orangtua" placeholder="Masukkan Nama Orangtua"  />
+                                @error('nama_orangtua')
+                                <div class="text-danger"><span>{{ $message }}</span></div>
+                                @enderror
                             </div>
                             <div class="mb-3 col-md-6">
                                 <label class="form-label" for="jeniskelamin">Jenis Kelamin</label>
@@ -137,28 +143,38 @@
                                     <option value="">Select</option>
                                     <option value="Laki-Laki">Laki-Laki</option>
                                     <option value="Perempuan">Perempuan</option>
-                                    <small class="text-danger mt-2 error-message" id="jeniskelamin-errors"></small>
                                 </select>
+                                @error('jeniskelamin')
+                                <div class="text-danger"><span>{{ $message }}</span></div>
+                                @enderror
                             </div>
                             <div class="mb-3 col-md-6">
                                 <label class="form-label" for="notelpon">No Telpon</label>
-                                <input type="text" id="notelpon" name="notelpon" class="form-control" placeholder="Masukkan Nomer Telpon" required />
-                                <small class="text-danger mt-2 error-message" id="notelpon-errors"></small>
+                                <input type="text" id="notelpon" name="notelpon" class="form-control" placeholder="Masukkan Nomer Telpon"  />
+                                @error('nama_siswa')
+                                <div class="text-danger"><span>{{ $message }}</span></div>
+                                @enderror
                             </div>
                             <div class="mb-3 col-md-6">
                                 <label for="alamat" class="form-label">Alamat</label>
                                 <input type="text" class="form-control" id="alamat" name="alamat" placeholder="Masukkan alamat" />
-                                <small class="text-danger mt-2 error-message" id="alamat-errors"></small>
+                                @error('alamat')
+                                <div class="text-danger"><span>{{ $message }}</span></div>
+                                @enderror
                             </div>
                             <div class="mb-3 col-md-6">
                                 <label for="no_akte" class="form-label">No Akte</label>
-                                <input class="form-control" type="text" id="akte" name="akte" placeholder="Masukkan Nomer Akte" required />
-                                <small class="text-danger mt-2 error-message" id="akte-errors"></small>
+                                <input class="form-control" type="text" id="akte" name="akte" placeholder="Masukkan Nomer Akte"  />
+                                @error('akte')
+                                <div class="text-danger"><span>{{ $message }}</span></div>
+                                @enderror
                             </div>
                             <div class="mb-3 col-md-6">
                                 <label for="nik" class="form-label">Nik</label>
-                                <input type="text" class="form-control" id="nik" name="nik" placeholder="Masukkan Nik" required />
-                                <small class="text-danger mt-2 error-message" id="nik-errors"></small>
+                                <input type="text" class="form-control" id="nik" name="nik" placeholder="Masukkan Nik"  />
+                                @error('nik')
+                                 <div class="text-danger"><span>{{ $message }}</span></div>
+                                @enderror
                             </div>
                             <div class="mb-3 col-md-6">
                                 <label class="form-label" for="kelas">Kelas</label>
@@ -167,7 +183,9 @@
                                     <option value="Kelas A">Kelas A</option>
                                     <option value="Kelas B">Kelas B</option>
                                 </select>
-                                <small class="text-danger mt-2 error-message" id="kelas-errors"></small>
+                                @error('kelas')
+                                <div class="text-danger"><span>{{ $message }}</span></div>
+                                @enderror
                             </div>
                             <div class="mb-3 col-md-6">
                                 <label for="status" class="form-label">Status</label>
@@ -177,18 +195,22 @@
                                     <option value="Aktif">Aktif</option>
                                     <option value="Tidak Aktif">Tidak Aktif</option>
                                 </select>
-                                <small class="text-danger mt-2 error-message" id="status-errors"></small>
+                                @error('status')
+                                <div class="text-danger"><span>{{ $message }}</span></div>
+                                @enderror
                             </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
-                                <button type="submit" class="btn btn-primary">Tambah</button>
-                            </div>
-                        </form>
-                    </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary">Tambah</button>
+                        </div>
+                    </form>
                 </div>
+            </div>
         </div>
     </div>
 </div>
+
 <!--/ Basic Bootstrap Table -->
 @endsection
 
