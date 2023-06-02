@@ -19,6 +19,18 @@ class SiswaController extends Controller
         return view('admin.datapendaftar', compact('siswa'));
     }
 
+    public function search(Request $request)
+    {
+        $search = $request->input('search');
+        $siswa = Siswa::where('nama_siswa', 'like', '%'.$search.'%')
+            ->orWhere('nik', 'like', '%'.$search.'%')
+            ->orWhere('usia', 'like', '%'.$search.'%')
+            // Tambahkan kondisi pencarian sesuai dengan kolom yang ingin dicari
+            ->paginate(10);
+
+        return view('admin.datapendaftar', compact('siswa'));
+    }
+
 
     public function berhasildaftar()
     {
@@ -112,7 +124,7 @@ public function hapus($id)
             'jeniskelamin' => 'required',
             'notelpon' => 'required',
             'akte' => 'required',
-            'nik' => 'required|unique:siswa.nik',
+            'nik' => 'required',
             'status' => '',
             'kelas' => '',
             'nama_orangtua' => 'required',

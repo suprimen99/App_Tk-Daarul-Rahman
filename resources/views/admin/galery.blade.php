@@ -33,7 +33,6 @@
                         name="foto"
                         height="50px"
                         width="50px"
-                        id="uploadedAvatar"
                     /></td>
                     <td>{{ $item->titlegalery }}</td>
                     <td>{{ $item->captiongalery }}</td>
@@ -54,7 +53,9 @@
                 @endforeach
             </tbody>
         </table>
-        {!! $Galery->links() !!}
+        <div class="m-4">
+            {!! $Galery->links() !!}
+        </div>
     </div>
 </div>
 </div>
@@ -81,18 +82,34 @@
                     @endif
                     <form id="formAccountSettings" action="{{ route('simpangalery') }}" method="post" enctype="multipart/form-data">
                         @csrf
-                        <div class=" mb-5">
-                            <label for="foto" class="form-label">Upload Foto</label>
-                            <div class="input-group">
-                                <input
-                                  type="file"
-                                  class="form-control"
-                                  id="foto"
-                                  name="foto"
-                                  aria-describedby="inputGroupFileAddon04"
-                                  aria-label="Upload"
+                        <div class="card mb-4">
+                            <!-- Account -->
+                            <div class="d-flex align-items-start align-items-sm-center gap-4">
+                                <img
+                                    src=""
+                                    alt="paralax"
+                                    class="d-block rounded"
+                                    height="100"
+                                    width="100"
+                                    id="uploadedAvatar"
                                 />
+                                <div class="button-wrapper">
+                                    <label for="upload" class="btn btn-primary me-2 mb-4" tabindex="0">
+                                        <span class="d-none d-sm-block">Upload new photo</span>
+                                        <i class="bx bx-upload d-block d-sm-none"></i>
+                                        <input
+                                            type="file"
+                                            id="upload"
+                                            name="foto"
+                                            class="account-file-input"
+                                            hidden
+                                            accept="image/png, image/jpeg"
+                                            onchange="previewImage(this)"
+                                        />
+                                    </label>
+                                </div>
                             </div>
+                        </div>
 
 
                         <div class="row">
@@ -124,3 +141,18 @@
 </div>
 <!--/ Basic Bootstrap Table -->
 @endsection
+<script>
+    function previewImage(input) {
+        var avatar = document.getElementById('uploadedAvatar');
+
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function(e) {
+                avatar.src = e.target.result;
+            };
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+    </script>

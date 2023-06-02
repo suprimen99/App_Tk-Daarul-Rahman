@@ -158,8 +158,8 @@
     </div>
     <div class="row p-4">
         <div class="col-lg-6 d-flex justify-content-center align-items-center pb-3">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.1872026056753!2d106.73909044964411!3d-6.2390402954616615!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f0be7510fbdf%3A0xa40c5b11f1fb4083!2sWphsLaFamiglia!5e0!3m2!1sid!2sid!4v1674112700334!5m2!1sid!2sid"
-                allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="maps"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15864.327522623177!2d106.7631909!3d-6.2418032!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f0e718625e79%3A0x69d0694d4215e4d!2sJl.%20Ulujami%20Raya%20No.41%2C%20RT.11%2FRW.5%2C%20Ulujami%2C%20Kec.%20Pesanggrahan%2C%20Kota%20Jakarta%20Selatan%2C%20Daerah%20Khusus%20Ibukota%20Jakarta%2012250!5e0!3m2!1sen!2sid!4v1622753085769!5m2!1sen!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+
         </div>
 
         <div class="col-lg-6 col-md-6">

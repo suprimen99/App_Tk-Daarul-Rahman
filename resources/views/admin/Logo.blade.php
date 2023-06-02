@@ -3,13 +3,13 @@
 @section('content')
 
 <div class="container-xxl flex-grow-1 container-p-y">
-    <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Tables /</span> Galery</h4>
+    <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Tables /</span> Logo</h4>
 <!-- Basic Bootstrap Table -->
 <div class="mb-3">
     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#simpanModal"><i class='bx bx-layer-plus'></i>Tambah</button>
 </div>
 <div class="card">
-    <h5 class="card-header">GALERI</h5>
+    <h5 class="card-header">Logo</h5>
     @if (Session('status'))
     <div class="alert alert-success">
         {{Session('message')}}
@@ -36,7 +36,6 @@
                         name="foto"
                         height="50px"
                         width="50px"
-                        id="uploadedAvatar"
                     /></td>
                     <td>{{ $item->created_at }}</td>
                     <td>
@@ -55,7 +54,9 @@
                 @endforeach
             </tbody>
         </table>
-        {!! $logo->links() !!}
+        <div class="m-4">
+            {!! $logo->links() !!}
+        </div>
     </div>
 </div>
 </div>
@@ -77,7 +78,36 @@
                     <form id="formAccountSettings" action="{{ route('simpanlogo') }}" method="post" enctype="multipart/form-data">
                         @csrf
                         <div class=" mb-5">
-                            <label for="foto" class="form-label">Upload Foto</label>
+
+                            <div class="card mb-4">
+                                <!-- Account -->
+                                <div class="d-flex align-items-start align-items-sm-center gap-4">
+                                    <img
+                                        src=""
+                                        alt="paralax"
+                                        class="d-block rounded"
+                                        height="100"
+                                        width="100"
+                                        id="uploadedAvatar"
+                                    />
+                                    <div class="button-wrapper">
+                                        <label for="upload" class="btn btn-primary me-2 mb-4" tabindex="0">
+                                            <span class="d-none d-sm-block">Upload new photo</span>
+                                            <i class="bx bx-upload d-block d-sm-none"></i>
+                                            <input
+                                                type="file"
+                                                id="upload"
+                                                name="foto"
+                                                class="account-file-input"
+                                                hidden
+                                                accept="image/png, image/jpeg"
+                                                onchange="previewImage(this)"
+                                            />
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            {{-- <label for="foto" class="form-label">Upload Foto</label>
                             <div class="input-group">
                                 <input
                                   type="file"
@@ -87,7 +117,8 @@
                                   aria-describedby="inputGroupFileAddon04"
                                   aria-label="Upload"
                                 />
-                            </div>
+
+                            </div> --}}
 
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
@@ -101,3 +132,18 @@
 </div>
 <!--/ Basic Bootstrap Table -->
 @endsection
+<script>
+    function previewImage(input) {
+        var avatar = document.getElementById('uploadedAvatar');
+
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function(e) {
+                avatar.src = e.target.result;
+            };
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+    </script>

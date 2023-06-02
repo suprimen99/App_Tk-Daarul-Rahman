@@ -32,9 +32,9 @@ use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
     Route::POST('/simpan',[SiswaController::class, 'pendaftarsimpan'])->name('/simpan');
     Route::get('berhasildaftar',[SiswaController::class,'berhasildaftar'])->name('berhasildaftar');
     Route::middleware('auth.admin')->group(function(){
-
         Route::resource('/pendaftaran-siswa', PendaftarController::class);
         // Halaman Admin
+        Route::get('/siswa/search', [SiswaController::class,'search'])->name('searchSiswa');
         Route::POST('simpanpendaftar',[SiswaController::class,'insert'])->name('simpanpendaftar');
         Route::get('logout',[AuthController::class, 'logout'])->name('logout');
         Route::get('/dashboard',[DashboardController::class, 'dashboard'])->name('dashboard')->middleware('auth');

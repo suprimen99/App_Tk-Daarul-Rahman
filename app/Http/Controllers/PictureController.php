@@ -31,7 +31,7 @@ class PictureController extends Controller
 
         $Logo->save();
 
-        return redirect()->route('tambahlogo')->with('success', 'Logo Berhasil Ditambahkan');
+        return redirect()->route('tambahlogo')->with('success', '<h4>Logo Berhasil Ditambahkan</h4>');
 
     }
 
@@ -69,7 +69,7 @@ class PictureController extends Controller
 
         $picture->save();
 
-        return redirect()->route('tambahparalax')->with('success', 'Paralax Berhasil ditambahkan');
+        return redirect()->route('tambahparalax')->with('success', '<h4>Paralax Berhasil ditambahkan</h4> ');
 
     }
 
@@ -77,13 +77,13 @@ class PictureController extends Controller
 {
     $picture = Picture::findOrFail($id);
     $picture->delete();
-    return redirect()->back()->with('success', 'Data paralax berhasil dihapus');
+    return redirect()->back()->with('success', '<h4>Data paralax berhasil dihapus</h4>');
 }
     public function hapusgalery($id)
 {
     $picture = Galery::findOrFail($id);
     $picture->delete();
-    return redirect()->back()->with('success', 'Data Galery berhasil dihapus');
+    return redirect()->back()->with('success', '<h4>Data Galery berhasil dihapus</h4>');
 }
 
 
@@ -120,7 +120,7 @@ class PictureController extends Controller
 
         $Galery->save();
 
-        return redirect()->route('tambahgalery')->with('success', 'Galery berhasil di Hapus');
+        return redirect()->route('tambahgalery')->with('success', '<h4>Galery berhasil di Hapus</h4>');
 
     }
 

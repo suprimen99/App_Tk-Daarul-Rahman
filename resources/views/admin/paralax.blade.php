@@ -38,34 +38,36 @@
                         name="foto"
                         height="50px"
                         width="50px"
-                        id="uploadedAvatar"
-                    /></td>
-                    <td>{{ $item->titleparalax }}</td>
-                    <td>{{ $item->captionparalax }}</td>
-                    <td>{{ $item->created_at }}</td>
-                    <td>
-                        <div class="dropdown">
-                            <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
-                                <i class="bx bx-dots-vertical-rounded"></i>
-                            </button>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" href="{{ route('hapusparalax', $item->id ) }}" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">
-                                    <i class="bx bx-trash me-1"></i> Delete
-                                </a>
+                        id=""
+                        /></td>
+                        <td>{{ $item->titleparalax }}</td>
+                        <td>{{ $item->captionparalax }}</td>
+                        <td>{{ $item->created_at }}</td>
+                        <td>
+                            <div class="dropdown">
+                                <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
+                                    <i class="bx bx-dots-vertical-rounded"></i>
+                                </button>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="{{ route('hapusparalax', $item->id ) }}" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">
+                                        <i class="bx bx-trash me-1"></i> Delete
+                                    </a>
+                                </div>
                             </div>
-                        </div>
-                    </td>
-                </tr>
-                @endforeach
-            </tbody>
-        </table>
-        {!! $paralax->links() !!}
+                        </td>
+                    </tr>
+                    @endforeach
+                </tbody>
+            </table>
+            <div class="m-4">
+                {!! $paralax->links() !!}
+            </div>
+        </div>
     </div>
 </div>
-</div>
+@include('sweetalert::alert')
 
 @include('templates.footer')
-@include('sweetalert::alert')
 
 
 <!-- Modal -->
@@ -82,35 +84,47 @@
                         @csrf
                         <div class="card mb-4">
                             <!-- Account -->
-                            <div class="card-body">
-                                    <div class="button-wrapper">
-                                        <label for="upload" class="btn btn-primary me-2 mb-4" tabindex="0">
-                                            <span class="d-none d-sm-block">Upload new photo</span>
-                                            <i class="bx bx-upload d-block d-sm-none"></i>
-                                        </label>
+                            <div class="d-flex align-items-start align-items-sm-center gap-4">
+                                <img
+                                    src=""
+                                    alt="paralax"
+                                    class="d-block rounded"
+                                    height="100"
+                                    width="100"
+                                    id="uploadedAvatar"
+                                />
+                                <div class="button-wrapper">
+                                    <label for="upload" class="btn btn-primary me-2 mb-4" tabindex="0">
+                                        <span class="d-none d-sm-block">Upload new photo</span>
+                                        <i class="bx bx-upload d-block d-sm-none"></i>
                                         <input
                                             type="file"
                                             id="upload"
-                                            class="account-file-input"
                                             name="foto"
+                                            class="account-file-input"
                                             hidden
                                             accept="image/png, image/jpeg"
+                                            onchange="previewImage(this)"
                                         />
-                                        <p class="text-muted mb-0">Allowed JPG, GIF, or PNG. Max size of 800K</p>
-                                    </div>
+                                    </label>
                                 </div>
                             </div>
-                            </div>
-
+                        </div>
 
                         <div class="row">
                             <div class="mb-3 col-md-6">
-                                <label for="Title Galeri" class="form-label">Title Galery</label>
+                                <label for="Title Galeri" class="form-label">Title Paralax</label>
                                 <textarea name="titleparalax" class="form-control" id="titleparalax"></textarea>
+                                @error('titleparalax')
+                                <div class="text-danger">{{ $message }}</div>
+                                @enderror
                             </div>
                             <div class="mb-3 col-md-6">
-                                <label for="Caption Galeri" class="form-label">Caption Galery</label>
+                                <label for="Caption Galeri" class="form-label">Caption Paralax</label>
                                 <textarea name="captionparalax" class="form-control" id="captionparalax"></textarea>
+                                @error('captionparalax')
+                                <div class="text-danger">{{ $message }}</div>
+                                @enderror
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
@@ -119,8 +133,43 @@
                         </form>
                     </div>
                 </div>
+            </div>
         </div>
     </div>
 </div>
+
+<script>
+function previewImage(input) {
+    var avatar = document.getElementById('uploadedAvatar');
+
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+
+        reader.onload = function(e) {
+            avatar.src = e.target.result;
+        };
+
+        reader.readAsDataURL(input.files[0]);
+    }
+}
+</script>
+
+{{-- <script>
+        function previewImage(input) {
+            var avatar = document.getElementById('uploadedAvatar');
+
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function(e) {
+                    avatar.src = e.target.result;
+                };
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+    </script> --}}
+
 <!--/ Basic Bootstrap Table -->
 @endsection
