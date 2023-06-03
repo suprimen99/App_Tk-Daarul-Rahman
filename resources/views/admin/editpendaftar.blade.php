@@ -175,7 +175,7 @@ $(document).ready(function () {
   $('#editform').on('submit', function (e) {
     e.preventDefault();
     const id = $('#editPendaftar').find('input[name="id"]').val();
-    const foto = $('#editPendaftar').find('input[name="foto"]').val();
+    const foto = $('#editPendaftar').find('input[name="foto"]')[0].files[0];
     const nama_siswa = $('#editPendaftar').find('input[name="nama_siswa"]').val();
     const usia = $('#editPendaftar').find('input[name="usia"]').val();
     const nama_orangtua = $('#editPendaftar').find('input[name="nama_orangtua"]').val();
@@ -191,7 +191,10 @@ $(document).ready(function () {
     const formData = new FormData();
 
     formData.append('_method', 'PUT');
-    formData.append('foto', foto);
+    if(foto !== undefined)
+    {
+        formData.append('foto', foto);
+    }
     formData.append('nama_siswa', nama_siswa);
     formData.append('usia', usia);
     formData.append('nama_orangtua', nama_orangtua);
@@ -205,7 +208,7 @@ $(document).ready(function () {
     // formData.append('user_id', status);
 
 
-          for (let data of formData.entries()) {
+    for (let data of formData.entries()) {
         console.log(data[0] + ': ' + data[1]);
       }
 

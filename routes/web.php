@@ -28,6 +28,8 @@ use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
     Route::post('/login',[AuthController::class, 'Authenticate'])->name('/login');
     Route::get('registrasi',[AuthController::class,'registrasi'])->name('registrasi');
     Route::post('/registrasi',[AuthController::class,'registerprocess'])->name('/registrasi');
+    Route::get('hapusauth/{id}',[AuthController::class,'hapusauth'])->name('hapusauth');
+    Route::get('searchUser', [AuthController::class,'search'])->name('searchUser');
     Route::get('pendaftar',[SiswaController::class, 'pendaftar'])->name('pendaftar');
     Route::POST('/simpan',[SiswaController::class, 'pendaftarsimpan'])->name('/simpan');
     Route::get('berhasildaftar',[SiswaController::class,'berhasildaftar'])->name('berhasildaftar');

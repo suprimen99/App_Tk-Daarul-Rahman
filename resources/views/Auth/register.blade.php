@@ -1,4 +1,4 @@
-@extends('templates.main_auth')
+{{-- @extends('templates.main_auth')
 @section('title', 'Registrasi')
 @section('content')
 <div class="d-flex m-3">
@@ -33,4 +33,4 @@
                 </form>
             </div>
         </div>
-@endsection
+@endsection --}}

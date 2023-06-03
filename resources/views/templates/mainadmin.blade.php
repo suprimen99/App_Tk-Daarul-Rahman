@@ -153,6 +153,11 @@
               </a>
               <ul class="menu-sub">
                 <li class="menu-item">
+                  <a href="{{ route('registrasi') }}" class="menu-link">
+                    <div data-i18n="Account">Register</div>
+                  </a>
+                </li>
+                <li class="menu-item">
                   <a href="{{ route('tambahparalax') }}" class="menu-link">
                     <div data-i18n="Account">Paralax</div>
                   </a>

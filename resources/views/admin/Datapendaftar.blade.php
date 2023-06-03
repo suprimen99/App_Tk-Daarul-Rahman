@@ -117,7 +117,7 @@
                 <div class="card-body">
                     <form id="formAccountSettings" action="{{ route('simpanpendaftar') }}" method="post" enctype="multipart/form-data">
                         @csrf
-                        <div class="card mb-4">
+                         {{-- <div class="card mb-4">
                             <!-- Account -->
                             <div class="d-flex align-items-start align-items-sm-center gap-4">
                                 <img
@@ -144,7 +144,11 @@
                                     </label>
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
+                        <label for="lastName" class="form-label">Upload Image</label>
+                        <div class="input-group mb-3">
+                            <input type="file" class="form-control" id="foto" name="foto">
+                          </div>
                         <div class="row">
                             <div class="mb-3 col-md-6">
                                 <label for="lastName" class="form-label">Nama Siswa</label>
@@ -244,9 +248,10 @@
 
 <!--/ Basic Bootstrap Table -->
 @endsection
-<script>
+{{-- <script>
     function previewImage(input) {
-        var avatar = document.getElementById('uploadedAvatar');
+        var avatar = document.getElementById('uploadedAvatars');
+        conole.log(avatar);
 
         if (input.files && input.files[0]) {
             var reader = new FileReader();
@@ -258,7 +263,8 @@
             reader.readAsDataURL(input.files[0]);
         }
     }
-    </script>
+</script> --}}
+
 {{-- <script>
      $.ajax({
         url: '{{ route('simpanpendaftar.insert', ':id') }}'.replace(':id', id),

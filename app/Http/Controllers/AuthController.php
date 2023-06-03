@@ -17,7 +17,13 @@ class AuthController extends Controller
 
     public function registrasi()
     {
-        return view('Auth.register');
+        $user = User::paginate(3);
+        return view('Auth.register2',compact('user'));
+    }
+    public function registrasi2()
+    {
+        $user = User::paginate(3);
+        return view('Auth.register2',compact('user'));
     }
     public function registerprocess( Request $request)
     {
@@ -28,9 +34,27 @@ class AuthController extends Controller
 
         $request['password'] = Hash::make($request->password);
         $user = User::create($request->all());
-        Session::flash('status', 'sucess');
-        Session::flash('message', 'Register success, Silakan Login');
-        return redirect('login');
+        // Session::flash('status', 'sucess');
+        // Session::flash('message', 'Register success, Silakan Login');
+        return redirect()->back()->with('success', 'Data Berhasil Disimpan');
+    }
+
+    public function hapusauth($id)
+    {
+        $user = User::findOrfail($id);
+        $user->delete();
+        return redirect()->back()->with('success', 'Data User Berhasil Dihapus');
+    }
+
+
+    public function search(Request $request)
+    {
+        $search = $request->input('search');
+        $user = User::where('username', 'like', '%'.$search.'%')
+            // Tambahkan kondisi pencarian sesuai dengan kolom yang ingin dicari
+            ->paginate(5);
+
+        return view('Auth.register2', compact('user'));
     }
 
     public function logout(Request $request)

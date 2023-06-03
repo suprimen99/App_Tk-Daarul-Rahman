@@ -100,6 +100,12 @@ class PendaftarController extends Controller
         $siswa->kelas = $request->kelas;
         $siswa->status = $request->status;
         $siswa->user_id = $request->user_id;
+        if ($request->hasFile('foto')) {
+            $file = $request->file('foto');
+            $filename = $file->getClientOriginalName();
+            $file->move('storage', $filename);
+            $siswa->foto = $filename;
+        }
         $siswa->save();
 
         return response()->json([
