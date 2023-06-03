@@ -71,14 +71,26 @@ class SiswaController extends Controller
         'nama_siswa' => 'required',
         'usia' => 'required|numeric',
         'alamat' => 'required',
-        'jeniskelamin' => '',
+        'jeniskelamin' => 'required',
         'notelpon' => 'required',
         'akte' => 'required|numeric',
-        'nik' => 'required|numeric',
+        'nik' => 'required|unique:siswas|numeric',
         'status' => '',
         'kelas' => '',
-        'nama_orangtua' => '',
-        'user_id'=>''
+        'nama_orangtua' => 'required',
+    ],[
+        'nama_siswa.required' => 'Nama siswa harus diisi.',
+        'usia.required' => 'Usia harus diisi.',
+        'usia.numeric' => 'Usia harus berupa angka.',
+        'alamat.required' => 'Alamat harus diisi.',
+        'jeniskelamin.required' => 'Jenis kelamin harus dipilih.',
+        'notelpon.required' => 'Nomor telepon harus diisi.',
+        'akte.required' => 'Nomor akte harus diisi.',
+        'akte.numeric' => 'Nomor akte harus berupa angka.',
+        'nik.required' => 'NIK harus diisi.',
+        'nik.unique' => 'NIK sudah digunakan.',
+        'nik.numeric' => 'NIK harus berupa angka.',
+        'nama_orangtua.required' => 'Nama orang tua harus diisi.',
     ]);
 
     $Siswa = new Siswa();

@@ -110,8 +110,16 @@
             @endforeach
             <div class="col-lg-8 col-md-12 col-12">
                 <div class="About-caption">
-                    <h5><b>Visi & Misi</b></h5>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque deserunt et ullam sit non a laboriosam nam ratione officia sequi sed, vitae quisquam unde? Dolorum illum doloremque dolores voluptatibus quos.</p>
+                    <h5><b>Visi</b></h5>
+                    <p> Menghasilkan generasi  yang Berakhlakul karimah dan siap memasuki era Globalisasi.</p>
+                    <br>
+                    <h5><b>Misi</b></h5>
+                    <p>Membiasakan berprilak islami sesai adab dengan meneladani Rasullullah Saw.</p>
+                    <p>Menanamkan keimanan dan ketakwaan kepada peserta didik sedini mungkin.</p>
+                    <p>Menanamkan kepada anak sikap mandiri, keterampilan dalam keidupan sehari-hari</p>
+                    <p>Menerapkan pembelajaran yang kreatif dan menyenangkan</p>
+                    <p>Menciptakan lingkungan yang sehat,bersih,tertib,aman,dan nyaman</p>
+                    <p>Melatih anak-anak untuk meraih prestasi sesuai potensi yang dimiliki</p>
                     <a href="{{ route('pendaftar') }}" class="btn btn-warning border-opacity-10"> Daftar</a>
                 </div>
             </div>
@@ -163,10 +171,10 @@
         </div>
 
         <div class="col-lg-6 col-md-6">
-            <div class="card p-3  bg-light">
-                <div class="card-body">
-                  <h4 class="card-title"><b></b></h5>
-                  <p class="card-text"></p>
+            <div class="card p-3  bg-secondary">
+                <div class="card-body text-center">
+                  <h3 class="card-title text-light">Silakan Hubungi</h3>
+                  <h4 class="card-text text-light"><b>(021)73690478</b></h4>
                 </div>
               </div>
         </div>

@@ -1,6 +1,8 @@
-*{
-    font-family: monserat;
+* {
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
 }
+
 
 body{
     background: f1fbff;
