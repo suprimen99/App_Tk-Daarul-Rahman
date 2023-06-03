@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 01, 2023 at 09:46 PM
+-- Generation Time: Jun 03, 2023 at 11:50 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -45,7 +45,7 @@ CREATE TABLE `failed_jobs` (
 
 CREATE TABLE `galeries` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `foto` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `foto` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `titlegalery` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `captiongalery` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -57,7 +57,6 @@ CREATE TABLE `galeries` (
 --
 
 INSERT INTO `galeries` (`id`, `foto`, `titlegalery`, `captiongalery`, `created_at`, `updated_at`) VALUES
-(2, 'gelery1.jpg', 'Kegiatan', 'Menggambar', '2023-06-01 01:40:32', '2023-06-01 01:40:32'),
 (3, 'paralax2.jpg', 'ddaada', 'daadada', '2023-06-01 03:36:37', '2023-06-01 03:36:37'),
 (4, 'gelery1.jpg', 'gvgvgvg', 'vgvgvg', '2023-06-01 03:37:59', '2023-06-01 03:37:59');
 
@@ -69,7 +68,7 @@ INSERT INTO `galeries` (`id`, `foto`, `titlegalery`, `captiongalery`, `created_a
 
 CREATE TABLE `logos` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `foto` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `foto` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -148,7 +147,7 @@ CREATE TABLE `personal_access_tokens` (
 
 CREATE TABLE `pictures` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `foto` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `foto` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `titleparalax` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `captionparalax` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -195,7 +194,7 @@ CREATE TABLE `siswas` (
   `id` int(10) UNSIGNED NOT NULL,
   `nama_siswa` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `usia` varchar(5) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `foto` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `foto` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `nama_orangtua` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
   `jeniskelamin` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
   `notelpon` varchar(15) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -214,15 +213,16 @@ CREATE TABLE `siswas` (
 --
 
 INSERT INTO `siswas` (`id`, `nama_siswa`, `usia`, `foto`, `nama_orangtua`, `jeniskelamin`, `notelpon`, `alamat`, `nik`, `akte`, `kelas`, `status`, `user_id`, `created_at`, `updated_at`) VALUES
-(42, 'adcd', '13', 'paralax3.jpg', '12313331', 'Perempuan', '121313', 'Jl pesantren', '3671130605990007', '12345667', 'Kelas A', 'Lulus', NULL, '2023-06-01 08:59:01', '2023-06-01 09:40:05'),
-(43, 'test', '12', 'paralax3.jpg', '12313331', 'Laki-Laki', '1212122121', 'Jl pesantren', '14134', '12345667', 'Kelas A', 'Aktif', NULL, '2023-06-01 09:00:36', '2023-06-01 09:08:16'),
-(44, 'azaka', '13', 'gelery1.jpg', 'cadcadcad', 'Perempuan', '68767', 'Jl pesantren', '6767676', '121121', NULL, 'Lulus', NULL, '2023-06-01 09:06:23', '2023-06-01 09:45:18'),
-(46, 'test', '12', 'logo1.jpg', '12313331', 'Laki-Laki', '68767', 'Jl pesantren', '1212', '12345667', 'Kelas A', 'Tidak Aktif', NULL, '2023-06-01 10:08:21', '2023-06-01 10:08:21'),
-(47, 'test', '12', 'logo1.jpg', '12313331', 'Perempuan', '1313134324', 'Jl pesantren', '687676', '12345667', 'Kelas A', 'Lulus', NULL, '2023-06-01 10:18:32', '2023-06-01 10:18:32'),
-(53, 'kunyuk', '16', 'paralax2.jpg', '12313331', 'Laki-Laki', '1212122121', 'Jl pesantren', '555555', '121121', 'Kelas A', 'Aktif', NULL, '2023-06-01 10:55:36', '2023-06-01 10:55:36'),
-(54, 'cdadcda', '16', 'paralax1.jpg', '12313331', 'Perempuan', '68767', 'Jl pesantren', '77777', '12134234', 'Kelas A', 'Aktif', NULL, '2023-06-01 10:56:52', '2023-06-01 10:56:52'),
-(55, 'test', '12', 'paralax3.jpg', '12313331', 'Laki-Laki', '121313', 'Jl pesantren', '78787', '121121', 'Kelas A', 'Aktif', NULL, '2023-06-01 10:58:24', '2023-06-01 10:58:24'),
-(56, 'test123', '12', 'logo1.jpg', '12313331', 'Laki-Laki', '68767', 'Jl pesantren', '22222', '12345667', 'Kelas B', 'Lulus', NULL, '2023-06-01 12:21:48', '2023-06-01 12:21:48');
+(64, 'test', '12', 'kunyuk (2).png', '12313331', 'Laki-Laki', '121313', 'Jl pesantren', '999999999999', '12134234', 'Kelas A', 'Aktif', NULL, '2023-06-02 09:53:24', '2023-06-02 09:53:24'),
+(65, 'test7678689348537146831', '12', 'kunyuk.png', 'scacac', 'Laki-Laki', '1313134324', 'Jl pesantren', '4124342424234', '121121', NULL, NULL, NULL, '2023-06-02 10:23:34', '2023-06-03 01:20:31'),
+(66, 'test', '12', 'kunyuk.png', '12313331', 'Perempuan', '1313134324', 'Jl pesantren', '123143456756', '12134234', NULL, NULL, NULL, '2023-06-02 10:24:43', '2023-06-03 00:39:10'),
+(68, 'test', '12', NULL, 'scacac', 'Perempuan', '1313134324', 'Jl pesantren', '354543534', '12345667', 'Kelas A', 'Aktif', NULL, '2023-06-03 00:44:36', '2023-06-03 00:44:36'),
+(69, 'test', '12', 'kunyuk (2).png', '12313331', 'Laki-Laki', '121313', 'Jl pesantren', '3671130605990007', '12134234', 'Kelas A', 'Aktif', NULL, '2023-06-03 00:59:59', '2023-06-03 01:20:53'),
+(70, 'vjvjhvjh', '12', '647b032a6329f.png', '12313331', 'Laki-Laki', '1313134324', 'Jl pesantren', '14134', '12134234', 'Kelas A', 'Lulus', NULL, '2023-06-03 02:08:58', '2023-06-03 02:08:58'),
+(71, 'test', '12', 'tugas-Page-4.drawio (1).png', '12313331', 'Laki-Laki', '121313', 'Jl pesantren', '231321312312', '12134234', 'Kelas A', 'Lulus', NULL, '2023-06-03 02:09:29', '2023-06-03 02:09:54'),
+(73, 'siswa', '13', '647b052b3a727.png', '12313331', 'Laki-Laki', '1313134324', 'Jl pesantren', '6767', '121121', 'Kelas A', 'Lulus', NULL, '2023-06-03 02:17:31', '2023-06-03 02:17:31'),
+(74, 'test', '12', '647b08ac62faf.png', '12313331', 'Laki-Laki', '1313134324', 'Jl pesantren', '121313', '12134234', 'Kelas A', 'Lulus', NULL, '2023-06-03 02:32:28', '2023-06-03 02:32:28'),
+(76, 'tttttttttt', '12', 'kunyuk (3).png', '12313331', 'Laki-Laki', '1212122121', 'Jl pesantren', '6576577657', '12134234', NULL, NULL, NULL, '2023-06-03 14:28:57', '2023-06-03 14:28:57');
 
 -- --------------------------------------------------------
 
@@ -244,9 +244,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `password`, `created_at`, `role_id`, `updated_at`) VALUES
-(1, 'admin', '$2y$10$M1X4480qTo/Eg3ktncZA3Oa1GZlCvpf0iyZW.6ZJ2WzWUu3UwuIJq', NULL, 1, NULL),
-(2, 'riski', '$2y$10$xjpIQoGlrTCgsh2iNpFLme6qCsduTakbuo2CDfg0QHhG/pKErPnZa', '2023-05-31 11:08:06', 2, '2023-05-31 11:08:06'),
-(3, 'riski', '$2y$10$y112.y20BSLiQYHedAlFR.xWuDwT1Xf.jXk6PR/nVCKJXK4wuOx6S', '2023-06-01 03:34:37', 2, '2023-06-01 03:34:37');
+(1, 'admin', '$2y$10$M1X4480qTo/Eg3ktncZA3Oa1GZlCvpf0iyZW.6ZJ2WzWUu3UwuIJq', NULL, 1, NULL);
 
 --
 -- Indexes for dumped tables
@@ -332,13 +330,13 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT for table `galeries`
 --
 ALTER TABLE `galeries`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `logos`
 --
 ALTER TABLE `logos`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `migrations`
@@ -356,7 +354,7 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT for table `pictures`
 --
 ALTER TABLE `pictures`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- AUTO_INCREMENT for table `roles`
@@ -368,13 +366,13 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT for table `siswas`
 --
 ALTER TABLE `siswas`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=77;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- Constraints for dumped tables
