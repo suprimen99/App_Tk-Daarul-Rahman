@@ -57,7 +57,7 @@ class SiswaController extends Controller
     $Siswa = $request->validated();
     $updateSiswa = Siswa::findOrFail($id);
     $updateSiswa->update($Siswa);
-    return redirect()->route('admin.tambahpendaftar')->with('status', 'Siswa Updated Successfully');
+    return redirect()->route('admin.tambahpendaftar')->with('status', 'Siswa Updated Berhasil');
 }
 
  public function pendaftar()
@@ -182,7 +182,7 @@ public function hapus($id)
             $Siswa->save();
         }
 
-        return redirect()->route('admin.tambahpendaftar')->with('success', 'Siswa Added Successfully');
+        return redirect()->route('admin.tambahpendaftar')->with('success', 'Siswa Berhasil Ditambahkan');
     }
 
 }

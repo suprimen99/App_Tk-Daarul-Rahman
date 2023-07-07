@@ -2,12 +2,12 @@
 @section('title', 'Welcome')
 @section('content')
 
-<nav class="navbar navbar-expand-lg  bg-primary navbar-dark sticky-top">
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top">
     <div class="container">
         @foreach ($logo as $item )
         <a class="navbar-brand" href="#home"><img src="{{ asset('storage/' . $item->foto) }}" class=" img-fluid" width="50px" height="50px"></a>
         <div class="justify-content-center align-content-center text-white">
-           <b><h4>Tk Da'arul Rahman</h4></b>
+           <b><h4>RA Daarul Rahman</h4></b>
         </div>
         @endforeach
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -190,7 +190,7 @@
 
 
 
-  <footer class="bg-primary text-center text-white">
+  <footer class="footer text-center text-white">
     <!-- Copyright -->
     <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
       © 2020 Copyright:

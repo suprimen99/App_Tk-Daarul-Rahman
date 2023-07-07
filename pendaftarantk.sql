@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 03, 2023 at 11:50 PM
+-- Generation Time: Jun 04, 2023 at 01:15 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -51,14 +51,6 @@ CREATE TABLE `galeries` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `galeries`
---
-
-INSERT INTO `galeries` (`id`, `foto`, `titlegalery`, `captiongalery`, `created_at`, `updated_at`) VALUES
-(3, 'paralax2.jpg', 'ddaada', 'daadada', '2023-06-01 03:36:37', '2023-06-01 03:36:37'),
-(4, 'gelery1.jpg', 'gvgvgvg', 'vgvgvg', '2023-06-01 03:37:59', '2023-06-01 03:37:59');
 
 -- --------------------------------------------------------
 
@@ -154,15 +146,6 @@ CREATE TABLE `pictures` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
---
--- Dumping data for table `pictures`
---
-
-INSERT INTO `pictures` (`id`, `foto`, `titleparalax`, `captionparalax`, `created_at`, `updated_at`) VALUES
-(19, 'paralax1.jpg', 'Selamat Datang', 'ini profile kami', '2023-06-01 01:38:11', '2023-06-01 01:38:11'),
-(20, 'paralax2.jpg', 'Selamat Datang', 'Ini profile kami', '2023-06-01 01:39:03', '2023-06-01 01:39:03'),
-(21, 'paralax3.jpg', 'Selamat Datang', 'ini Profile kami', '2023-06-01 01:39:28', '2023-06-01 01:39:28');
-
 -- --------------------------------------------------------
 
 --
@@ -207,22 +190,6 @@ CREATE TABLE `siswas` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `siswas`
---
-
-INSERT INTO `siswas` (`id`, `nama_siswa`, `usia`, `foto`, `nama_orangtua`, `jeniskelamin`, `notelpon`, `alamat`, `nik`, `akte`, `kelas`, `status`, `user_id`, `created_at`, `updated_at`) VALUES
-(64, 'test', '12', 'kunyuk (2).png', '12313331', 'Laki-Laki', '121313', 'Jl pesantren', '999999999999', '12134234', 'Kelas A', 'Aktif', NULL, '2023-06-02 09:53:24', '2023-06-02 09:53:24'),
-(65, 'test7678689348537146831', '12', 'kunyuk.png', 'scacac', 'Laki-Laki', '1313134324', 'Jl pesantren', '4124342424234', '121121', NULL, NULL, NULL, '2023-06-02 10:23:34', '2023-06-03 01:20:31'),
-(66, 'test', '12', 'kunyuk.png', '12313331', 'Perempuan', '1313134324', 'Jl pesantren', '123143456756', '12134234', NULL, NULL, NULL, '2023-06-02 10:24:43', '2023-06-03 00:39:10'),
-(68, 'test', '12', NULL, 'scacac', 'Perempuan', '1313134324', 'Jl pesantren', '354543534', '12345667', 'Kelas A', 'Aktif', NULL, '2023-06-03 00:44:36', '2023-06-03 00:44:36'),
-(69, 'test', '12', 'kunyuk (2).png', '12313331', 'Laki-Laki', '121313', 'Jl pesantren', '3671130605990007', '12134234', 'Kelas A', 'Aktif', NULL, '2023-06-03 00:59:59', '2023-06-03 01:20:53'),
-(70, 'vjvjhvjh', '12', '647b032a6329f.png', '12313331', 'Laki-Laki', '1313134324', 'Jl pesantren', '14134', '12134234', 'Kelas A', 'Lulus', NULL, '2023-06-03 02:08:58', '2023-06-03 02:08:58'),
-(71, 'test', '12', 'tugas-Page-4.drawio (1).png', '12313331', 'Laki-Laki', '121313', 'Jl pesantren', '231321312312', '12134234', 'Kelas A', 'Lulus', NULL, '2023-06-03 02:09:29', '2023-06-03 02:09:54'),
-(73, 'siswa', '13', '647b052b3a727.png', '12313331', 'Laki-Laki', '1313134324', 'Jl pesantren', '6767', '121121', 'Kelas A', 'Lulus', NULL, '2023-06-03 02:17:31', '2023-06-03 02:17:31'),
-(74, 'test', '12', '647b08ac62faf.png', '12313331', 'Laki-Laki', '1313134324', 'Jl pesantren', '121313', '12134234', 'Kelas A', 'Lulus', NULL, '2023-06-03 02:32:28', '2023-06-03 02:32:28'),
-(76, 'tttttttttt', '12', 'kunyuk (3).png', '12313331', 'Laki-Laki', '1212122121', 'Jl pesantren', '6576577657', '12134234', NULL, NULL, NULL, '2023-06-03 14:28:57', '2023-06-03 14:28:57');
 
 -- --------------------------------------------------------
 

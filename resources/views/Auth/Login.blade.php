@@ -29,7 +29,7 @@
                         <input type="password" class="form-control" name="password" id="password">
                     </div>
                     <div class="mt-3">
-                    <button type="submit" class="btn btn-primary form-control"> LOGIN </button>
+                    <button type="submit" class="btn btn-success form-control"> LOGIN </button>
                     </div>
                 </form>
             </div>

@@ -8,6 +8,12 @@ body{
     background: f1fbff;
 }
 
+.navbar{
+    background-color: #198754;
+}
+.footer{
+    background-color: #198754;
+}
 .section-padding{
     padding: 100px 0;
 }

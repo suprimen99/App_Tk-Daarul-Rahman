@@ -85,7 +85,7 @@
         <div class="card">
             <div class="card-title">
                 <div class="text-center mt-5">
-                    <h1>Lengkapi data Pendaftar</h1>
+                    <h1>Lengkapi Data Pendaftar</h1>
                 </div>
                 <div class="card-body">
                         <form id="formAccountSettings"action="{{ route('/simpan') }}" method="post" enctype="multipart/form-data">

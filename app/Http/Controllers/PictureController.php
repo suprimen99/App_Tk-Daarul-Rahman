@@ -83,7 +83,7 @@ class PictureController extends Controller
 {
     $picture = Galery::findOrFail($id);
     $picture->delete();
-    return redirect()->back()->with('success', '<h4>Data Galery berhasil dihapus</h4>');
+    return redirect()->back()->with('success', '<h4>Data Galery berhasil ditambahkan</h4>');
 }
 
 
